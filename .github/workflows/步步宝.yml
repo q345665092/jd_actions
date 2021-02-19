@@ -21,7 +21,7 @@ jobs:
       - name: Checkout
         if: env.BBB_CK
         run: |
-          git clone https://github.com/zsh35/jd_actions.git ~/jd_scripts
+          git clone https://github.com/zsh35/jd_actions.git ~/TaskAction
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         if: env.BBB_CK
@@ -39,7 +39,7 @@ jobs:
         if: env.BBB_CK
         run: |
           cd ~/TaskAction
-          git checkout main
+          git checkout my
           npm install
           
       - name: '运行 【步步宝app】'
