@@ -38,13 +38,13 @@ jobs:
       - name: npm install
         if: env.BBB_CK
         run: |
-          cd ~/jd_scripts
+          cd ~/TaskAction
           git checkout main
           npm install
           
       - name: '运行 【步步宝app】'
         run: |
-          cd ~/jd_scripts/work
+          cd ~/TaskAction
           node BBB.js
         env:
           BBB_CK: ${{ secrets.BBB_CK }}
