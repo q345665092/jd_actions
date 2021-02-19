@@ -24,9 +24,11 @@ jobs:
           git clone https://github.com/zsh35/jd_actions.git ~/jd_scripts
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
+        if: env.BBB_CK
         with:
           node-version: ${{ matrix.node-version }}
       - name: Cache node_modules
+        if: env.BBB_CK
         uses: actions/cache@v2 # 使用 GitHub 官方的缓存 Action。
         env:
           cache-name: cache-node-modules
@@ -39,10 +41,11 @@ jobs:
           cd ~/jd_scripts
           git checkout main
           npm install
+          
       - name: '运行 【步步宝app】'
-        if: env.BBB_CK
         run: |
           cd ~/jd_scripts/work
           node BBB.js
         env:
+          BBB_CK: ${{ secrets.BBB_CK }}
           TZ: Asia/shanghai
