@@ -119,15 +119,6 @@ jobs:
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
 
-      - name: '运行 【京东直播18豆】'
-        run: |
-          cd ~/TaskAction
-          node jd_live.js
-        env:
-          JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
-
-
       # - name: '运行 【取关京东店铺商品】' 
       #   run: |
       #     cd ~/TaskAction
@@ -170,11 +161,13 @@ jobs:
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
-
-      - name: '运行 【京东国际盲盒】'
+          
+      - name: '运行 【美丽研究院】'
         run: |
           cd ~/TaskAction
-          node jd_global_mh.js
+          node jd_beauty.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          BARK_PUSH: ${{ secrets.BARK_PUSH }}      
+          
+
